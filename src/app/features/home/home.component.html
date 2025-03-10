@@ -8,6 +8,7 @@
   <div class="mb-4">
     <label for="num-players" class="block text-sm">Jogadores por Time:</label>
     <input type="number" id="num-players"
+      min="1" max="100" step="1"
       class="default-input w-full p-2.5"
       [(ngModel)]="numPlayers">
   </div>
