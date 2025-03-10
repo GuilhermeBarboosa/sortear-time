@@ -15,15 +15,15 @@ export class HomeComponent implements OnInit {
 
   sortearTimes(): void {
     const playersArray = this.playerNames
-    .split('\n')
-    .map((name) =>
-      name
-        .replace(/[\d-]/g, '') // Remove números e hífens
-        .trim()
-        .toUpperCase()
-    )
-    .filter((name) => name !== '');
-
+      .split('\n')
+      .flatMap((line) =>
+        line
+          .replace(/[\d-]/g, ' ')
+          .replace(/([a-z])([A-Z])/g, '$1 $2')
+          .split(/\s{2,}|\s*,\s*|\s*;\s*/g)
+          .map((name) => name.trim().toUpperCase())
+      )
+      .filter((name) => name !== '');
 
     if (!this.numPlayers || this.numPlayers <= 0 || playersArray.length === 0) {
       this.errorMessage = 'Por favor, preencha todos os campos!';
@@ -42,6 +42,9 @@ export class HomeComponent implements OnInit {
     const shuffledPlayers = this.shuffle(playersArray);
 
     const numTeams = Math.ceil(shuffledPlayers.length / this.numPlayers);
+
+    console.log(shuffledPlayers);
+
     this.teams = [];
 
     for (let i = 0; i < numTeams; i++) {

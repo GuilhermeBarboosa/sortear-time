@@ -80,9 +80,3 @@ footer {
   margin: 0 !important;
   padding: 0 !important;
 }
-
-
-p:hover{
-  color: #001859;
-  text-decoration: underline;
-}
