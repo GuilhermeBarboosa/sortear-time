@@ -1,0 +1,27 @@
+.max-w-md{
+  width: 50% !important;
+}
+
+.bx, .bx-log-out{
+  font-size: 1.5rem;
+  color: #fff !important;
+  cursor: pointer;
+}
+
+.logo_sistema{
+  width: 15%;
+}
+
+.logo_codiub{
+  width: 8%;
+}
+
+@media screen and (max-width: 768px) {
+  .col img {
+    width: 50%;
+  }
+
+  .logo_codiub{
+    width: 25%;
+  }
+}

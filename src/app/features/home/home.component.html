@@ -1,0 +1,40 @@
+<div class="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6">
+  <div class="text-center mb-5">
+    <h2 class="text-2xl font-bold text-gray-800">🎲 Sorteador de Times</h2>
+    <p class="text-gray-500 text-sm">Organize seus times de forma rápida e aleatória!</p>
+  </div>
+
+  <!-- Input: Quantidade de jogadores por time -->
+  <div class="mb-4">
+    <label for="num-players" class="block text-gray-700 font-medium">Jogadores por Time:</label>
+    <input type="number" id="num-players" class="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="numPlayers">
+  </div>
+
+  <!-- Input: Lista de jogadores -->
+  <div class="mb-4">
+    <label for="player-names" class="block text-gray-700 font-medium">Nomes dos Jogadores (um por linha):</label>
+    <textarea id="player-names" rows="5" class="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" [(ngModel)]="playerNames"></textarea>
+  </div>
+
+  <!-- Botão para sortear -->
+  <div class="flex justify-center">
+    <app-button-primary value="🎲 Sortear Times" (click)="sortearTimes()" class="">
+
+    </app-button-primary>
+  </div>
+
+  <!-- Exibição de erro -->
+  <div *ngIf="errorMessage" class="mt-4 text-red-600 text-center bg-red-100 border border-red-400 px-4 py-2 rounded-lg">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Resultado do sorteio -->
+  <div id="resultado" class="mt-6">
+    <div *ngFor="let team of teams; let i = index" class="bg-gray-100 p-4 rounded-lg shadow-md mt-4">
+      <h4 class="text-lg font-bold text-gray-800">🔥 Time {{ i + 1 }}</h4>
+      <ul class="mt-2 space-y-1">
+        <li *ngFor="let player of team" class="text-gray-700">✅ {{ player }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

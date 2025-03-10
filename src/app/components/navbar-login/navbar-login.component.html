@@ -1,0 +1,44 @@
+<!-- [ngStyle]="{
+  'background-color': styleService.colorVariables['bg_primary_color']
+}" -->
+
+<div
+  [ngStyle]="{
+    'background-color': styleService.colorVariables['bg_primary_color']
+  }"
+  class="full-width navbar"
+>
+  <div *ngIf="value == 'CMS'">
+    <div class="grid grid-cols-2 items-center justify-between">
+      <div class="col">
+        <img
+          class="h-auto max-w-full p-3 logo_sistema"
+          src="../../../assets/white-codiub.png"
+          alt=""
+        />
+      </div>
+
+      <div class="col p-2 flex items-center justify-end">
+        <p class="m-5 flex items-center text-white justify-center text-sm">
+          Bem vindo(a), {{ nameUser }}
+        </p>
+
+        <i
+          (click)="logout()"
+          class="bx bx-log-out cursor-pointer"
+          id="log_out"
+        ></i>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="value != 'CMS'">
+    <div class="flex items-center justify-start ">
+      <img
+      class="h-auto max-w-full p-3 logo_codiub"
+      src="../../../assets/white-codiub.png"
+      alt=""
+    />
+    </div>
+  </div>
+</div>

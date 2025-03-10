@@ -1,0 +1,137 @@
+<!-- <app-navbar-login [value]="tipoPagina"></app-navbar-login> -->
+
+<div class="flex mb-10">
+  <div class="w-full m-5">
+    <div class="p-4 bg-white m-5 shadow-sm rounded-sm">
+      <div
+        class="flex items-center space-x-2 font-semibold text-gray-900 leading-8"
+      >
+        <span clas="text-green-500">
+          <svg
+            class="h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            />
+          </svg>
+        </span>
+        <span class="tracking-wide">Sobre</span>
+
+        <a
+          id="botaoEdit"
+          (click)="editProfile()"
+          class="cursor-pointer text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3"
+        >
+          Editar informações
+        </a>
+      </div>
+      <div class="text-gray-700">
+        <div class="dv-padding-mdpi">
+          <form [formGroup]="userForm" *ngIf="userForm">
+            <div class="dv-line">
+              <div class="dv-column">
+                <div class="dv-padding-mdpi">
+                  <p class="dv-margin-bottom-ldpi">Nome completo</p>
+
+                  <input
+                    class="dv-padding-mdpi w-full dv-radius default-input"
+                    type="text"
+                    maxlength="255"
+                    id="usuario"
+                    formControlName="name"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="dv-line">
+              <div class="dv-column">
+                <div class="dv-padding-mdpi">
+                  <p class="dv-margin-bottom-ldpi">CPF</p>
+
+                  <input
+                    class="dv-padding-mdpi w-full dv-radius default-input dv-cpf dv-required"
+                    type="text"
+                    id="cpf"
+                    formControlName="cpf"
+                    autocomplete="off"
+                    placeholder="___.___.___-__"
+                    mask="000.000.000-00"
+                  />
+                </div>
+              </div>
+
+              <div class="dv-column">
+                <div class="dv-padding-mdpi">
+                  <p class="dv-margin-bottom-ldpi">Data de nascimento</p>
+
+                  <input
+                    class="dv-padding-mdpi w-full dv-radius default-input dv-required"
+                    type="text"
+                    id="data_de_nascimento"
+                    formControlName="data_de_nascimento"
+                    autocomplete="off"
+                    mask="00/00/0000"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="dv-line">
+              <div class="dv-column">
+                <div class="dv-padding-mdpi">
+                  <p class="dv-margin-bottom-ldpi">E-mail</p>
+
+                  <input
+                    class="dv-padding-mdpi w-full dv-radius default-input dv-required"
+                    type="text"
+                    id="email"
+                    maxlength="255"
+                    formControlName="email"
+                    autocomplete="off"
+                    value=""
+                  />
+                </div>
+              </div>
+
+              <div class="dv-column">
+                <div class="dv-padding-mdpi">
+                  <p class="dv-margin-bottom-ldpi">Celular</p>
+
+                  <input
+                    class="dv-padding-mdpi w-full dv-radius default-input dv-cellphone dv-required"
+                    type="text"
+                    id="telefone"
+                    formControlName="telefone"
+                    autocomplete="off"
+                    placeholder="__ _____-____"
+                    mask="00 00000-0000"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="dv-padding-mdpi pt-0 w-full flex justify-end">
+              <a id="salvarEdit" class="hidden">
+                <app-button-primary
+                  [value]="Salvar"
+                  (click)="salvarEdit()"
+                ></app-button-primary>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <app-footer-cms></app-footer-cms> -->
