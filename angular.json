@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mapadistritobase",
+            "outputPath": "dist/sortear-time",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mapadistritobase:build:production"
+              "browserTarget": "sortear-time:build:production"
             },
             "development": {
-              "browserTarget": "mapadistritobase:build:development"
+              "browserTarget": "sortear-time:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mapadistritobase:build"
+            "browserTarget": "sortear-time:build"
           }
         },
         "test": {
