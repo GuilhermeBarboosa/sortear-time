@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/routes/login.service';
-import { StyleService } from 'src/app/services/style.service';
 
 @Component({
   selector: 'app-navbar',

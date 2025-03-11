@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { StyleService } from 'src/app/services/style.service';
 
 @Component({
   selector: 'app-footer-cms',
@@ -7,5 +6,5 @@ import { StyleService } from 'src/app/services/style.service';
   styleUrls: ['./footer-cms.component.css'],
 })
 export class FooterCmsComponent {
-  constructor(public styleService: StyleService) {}
+  constructor() {}
 }

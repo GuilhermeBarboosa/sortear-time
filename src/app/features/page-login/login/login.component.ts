@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { LoginInput } from 'src/app/interfaces/input/login-input';
 import { LoginService } from 'src/app/routes/login.service';
 import { NotifierService } from 'src/app/services/notifier.service';
-import { StyleService } from 'src/app/services/style.service';
 import { TokenJwtService } from 'src/app/services/token-jwt.service';
 
 @Component({
@@ -19,8 +18,7 @@ export class LoginComponent implements OnInit {
     private tokenJwtService: TokenJwtService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private notifier: NotifierService,
-    public styleService: StyleService
+    private notifier: NotifierService
   ) {}
 
   loginForm!: FormGroup;
